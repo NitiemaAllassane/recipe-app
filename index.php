@@ -1,30 +1,24 @@
 <?php
-$users = [
-    [
-        'full_name' => 'Nitiema Allassane',
-        'email' => 'allassane.nitiema@exemple.com',
-        'age' => 21,
-    ],
-    [
-        'full_name' => 'Mathieu Nebra',
-        'email' => 'mathieu.nebra@exemple.com',
-        'age' => 34,
-    ],
-    [
-        'full_name' => 'Zongo Karidjatou',
-        'email' => 'zongo.kadi@exemple.com',
-        'age' => 46,
-    ],
-];
-
-
 $recipes = [
-    ["Attike", "[...]", "allassane.nitiema@exemple.com", true],
-    ["Foutou Banane", "[...]", "zongo.kadi@exemple.com", false],
-    ["Spaguethi", "[...]", "zongo.abiba@exemple.com", false],
-    ["Soupe de poulet", "[...]", "kabre.sali@exemple.com", true],
+    [
+        'title' => 'Cassoulet',
+        'recipe' => 'Etape 1 : des flageolets !',
+        'author' => 'mickael.andrieu@exemple.com',
+        'is_enabled' => true,
+    ],
+    [
+        'title' => 'Couscous',
+        'recipe' => 'Etape 1 : de la semoule',
+        'author' => 'mickael.andrieu@exemple.com',
+        'is_enabled' => false,
+    ],
+    [
+        'title' => 'Escalope milanaise',
+        'recipe' => 'Etape 1 : prenez une belle escalope',
+        'author' => 'mathieu.nebra@exemple.com',
+        'is_enabled' => true,
+    ],
 ];
-
 
 ?>
 
@@ -33,21 +27,21 @@ $recipes = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Affichage des listes des recettes</title>
+    <title>Recette de cuisine</title>
 </head>
 <body>
-    <h1>Appli de recettes</h1>
-    <h2>Listes des recettes</h2>
-    <ul>
-        <?php for ($line = 0; $line <= 3; $line++):  ?>
-            <li>
-                <?php echo "{$recipes[$line][0]} ({$recipes[$line][2]})"; ?>
-            </li>
-        <?php endfor;  ?>
-    </ul>
-    <footer>
-        <p>&copy; RecipeApp</p>
-    </footer>
+
+    <h1>Affichages des recettes</h1>
+    <?php foreach($recipes as $recipe): ?>
+        <?php if (array_key_exists('is_enabled', $recipe) && $recipe['is_enabled']): ?>
+            <article>
+                <h2><?php echo $recipe['title']; ?></h2>
+                <p><?php echo $recipe['recipe']; ?></p>
+                <em><?php echo $recipe['author']; ?></em>
+            </article>
+        <?php endif; ?>
+    <?php endforeach; ?>
+    
 </body>
 </html>
+
