@@ -46,5 +46,8 @@ $recipes = [
             </li>
         <?php endfor;  ?>
     </ul>
+    <footer>
+        <p>&copy; RecipeApp</p>
+    </footer>
 </body>
 </html>
