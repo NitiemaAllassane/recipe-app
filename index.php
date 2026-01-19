@@ -21,6 +21,8 @@ $users = [
 $recipes = [
     ["Attike", "[...]", "allassane.nitiema@exemple.com", true],
     ["Foutou Banane", "[...]", "zongo.kadi@exemple.com", false],
+    ["Spaguethi", "[...]", "zongo.abiba@exemple.com", false],
+    ["Soupe de poulet", "[...]", "kabre.sali@exemple.com", true],
 ];
 
 
@@ -36,7 +38,7 @@ $recipes = [
 <body>
     <h2>Listes des recettes</h2>
     <ul>
-        <?php for ($line = 0; $line <= 1; $line++):  ?>
+        <?php for ($line = 0; $line <= 3; $line++):  ?>
             <li>
                 <?php echo "{$recipes[$line][0]} ({$recipes[$line][2]})"; ?>
             </li>
