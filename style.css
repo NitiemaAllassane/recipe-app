@@ -1,3 +1,13 @@
-h1 {
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li {
+        font-size: 1.2em;
+    }
+}
+
+h2 {
     color: blue;
 }
