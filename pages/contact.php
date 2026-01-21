@@ -16,7 +16,7 @@
     <main>
         <div class="container">
             <h1>Contactez nous</h1>
-            <form action="../php/contact_submit.php" method="post">
+            <form action="../php/contact_submit.php" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input 
@@ -38,6 +38,10 @@
                         id="message" 
                         name="message">
                     </textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="screenshot" class="form-label">Ajouter une capture d'ecran</label>
+                    <input type="file" name="screenshot" id="screenshot">
                 </div>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
