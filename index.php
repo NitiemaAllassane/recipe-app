@@ -1,6 +1,8 @@
 <?php
+session_start();
 require_once(__DIR__ . '/utils/datas.php');
 require_once(__DIR__ . '/utils/functions.php');
+require_once(__DIR__ . '/config/config.php');
 
 ?>
 
@@ -12,6 +14,7 @@ require_once(__DIR__ . '/utils/functions.php');
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/headerStyle.css">
     <link rel="stylesheet" href="styles/footerStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>RecipeApp - Home</title>
 </head>
 <body>
@@ -21,23 +24,20 @@ require_once(__DIR__ . '/utils/functions.php');
     <!-- inclusion de la logique de connexion dans index.php -->
     <?php include_once(__DIR__ . '/php/login.php'); ?>
 
-
-    <?php if (isset($loggedUser)): ?>
-        <main>
-            <div class="container">
-                <h2>Site de recettes</h2>
-                <div class="recipes">
-                    <?php foreach(getRecipes($recipes) as $recipe): ?>
-                        <article class="recipe">
-                            <h3><?php echo $recipe['title']; ?></h2>
-                            <p><?php echo $recipe['recipe']; ?></p>
-                            <em><?php echo displayAuthor($recipe['author'], $users); ?></em>
-                        </article>
-                    <?php endforeach; ?>
-                </div>
+    <main>
+        <div class="container">
+            <h2>Site de recettes</h2>
+            <div class="recipes">
+                <?php foreach(getRecipes($recipes) as $recipe): ?>
+                    <article class="recipe">
+                        <h3><?php echo $recipe['title']; ?></h2>
+                        <p><?php echo $recipe['recipe']; ?></p>
+                        <em><?php echo displayAuthor($recipe['author'], $users); ?></em>
+                    </article>
+                <?php endforeach; ?>
             </div>
-        </main>
-    <?php endif; ?>
+        </div>
+    </main>
 
     
     <?php require_once(__DIR__ . '/components/footer.php'); ?>

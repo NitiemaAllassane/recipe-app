@@ -35,4 +35,12 @@ function displayAuthor(string $authorEmail, array $users): string {
     return "Auteur inconnu";
 }
 
+
+// FOnction pour rediriger vers d'autre pages
+function redirectToUrl(string $url): never
+{
+    header("Location: {$url}");
+    exit();
+}
+
 ?>

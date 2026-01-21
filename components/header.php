@@ -11,6 +11,13 @@ require_once(__DIR__ . '/../config/config.php');
             <ul>
                 <li><a href="<?= BASE_URL ?>index.php">Home</a></li>
                 <li><a href="<?= BASE_URL ?>pages/contact.php">Contact</a></li>
+                <?php if (isset($_SESSION['LOGGED_USER'])): ?>
+                    <li>
+                        <a href="<?= BASE_URL ?>php/logout.php">
+                            Se deconnecter
+                        </a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </nav>
     </div>
