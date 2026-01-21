@@ -1,0 +1,23 @@
+header {
+    padding-inline: 2em;
+    padding-block: 1em;
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        list-style: none;
+    }
+}

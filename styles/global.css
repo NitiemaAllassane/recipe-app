@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1080px;
+    margin-inline: auto;
+}
+
+main {
+    min-height: 80vh;
+    h1 {
+        margin-bottom: 2rem;
+    }
+}
+
+.recipes {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .recipe {
+        border: 1px solid gray;
+        max-width: 100%;
+        width: 24em;
+        padding: 12px;
+    }
+
+    h3 {
+        margin-bottom: 6px;
+    }
+
+    p {
+        margin-bottom: 12px;
+    }
+
+    em {
+        font-size: 14px;
+        font-weight: 500;
+        color: gray;
+    }
+}
+
