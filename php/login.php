@@ -18,7 +18,7 @@ if (isset($postData['email']) && isset($postData['password'])) {
     }
 
     if (!isset($loggedUser)) {
-        sprintf(
+        $errorMesage = sprintf(
             "Les informations envoyées ne permettent pas de vous identifier: (%s / %s)",
             $postData['email'],
             strip_tags($postData['password'])
@@ -45,8 +45,11 @@ if (isset($postData['email']) && isset($postData['password'])) {
 
     <div class="container">
         <?php if (!isset($loggedUser)): ?>
-            <div>
+            <main>
                 <h1>Connectez vous</h1>
+                <?php if (isset($errorMesage)):  ?>
+                    <p style="color: red;"><?php echo $errorMesage;  ?></p>
+                <?php endif;  ?>
                 <form action="index.php" method="post">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
@@ -74,7 +77,7 @@ if (isset($postData['email']) && isset($postData['password'])) {
                     </div>
                     <button type="submit" class="btn btn-primary">Envoyer</button>
                 </form>
-            </div>
+            </main>
         <?php else: ?>
             <h1>Bonjour <span style="color: blue;"><?php echo $loggedUser['email'] ?></span> et bienvenue sur le site</h1>
         <?php endif;  ?>

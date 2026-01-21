@@ -19,7 +19,7 @@ require_once(__DIR__ . '/utils/functions.php');
     <?php require_once(__DIR__ . '/components/header.php'); ?>
 
     <!-- inclusion de la logique de connexion dans index.php -->
-    <?php require_once(__DIR__ . '/php/login.php'); ?>
+    <?php include_once(__DIR__ . '/php/login.php'); ?>
 
 
     <?php if (isset($loggedUser)): ?>
