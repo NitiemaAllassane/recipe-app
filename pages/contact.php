@@ -16,7 +16,7 @@
     <main>
         <div class="container">
             <h1>Contactez nous</h1>
-            <form action="../php/contact_submit.php" methode="get">
+            <form action="../php/contact_submit.php" method="post">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input 
