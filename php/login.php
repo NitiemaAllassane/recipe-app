@@ -34,6 +34,8 @@
             </form>
         </main>
     <?php else: ?>
-        <h1>Bonjour <span style="color: blue;"><?php echo $_SESSION['LOGGED_USER']['email'] ?></span> et bienvenue sur le site</h1>
+        <div class="connectInfo">
+            <h3>Bonjour <span style="color: #fff;"><?php echo $_SESSION['LOGGED_USER']['email'] ?></span> et bienvenue sur le site</h3>
+        </div>
     <?php endif;  ?>
 </div>
