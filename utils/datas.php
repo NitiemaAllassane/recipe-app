@@ -1,53 +1,22 @@
 <?php
+include_once(__DIR__ . '/../config/mysql.php');
+include_once(__DIR__ . '/../config/databaseconnect.php');
 
-$users = [
-    [
-        'full_name' => 'Mickaël Andrieu',
-        'email' => 'mickael.andrieu@exemple.com',
-        'age' => 34,
-        'password' => '1234',
-    ],
-    [
-        'full_name' => 'Mathieu Nebra',
-        'email' => 'mathieu.nebra@exemple.com',
-        'age' => 34,
-        'password' => '1234',
-    ],
-    [
-        'full_name' => 'Laurène Castor',
-        'email' => 'laurene.castor@exemple.com',
-        'age' => 28,
-        'password' => '1234',
-    ],
-    [
-        'full_name' => 'Nitiema Allassane',
-        'email' => 'allassane.nitiema@exemple.com',
-        'age' => 28,
-        'password' => 'maman',
-    ],
-];
+// Les requettes pour selectionner les tous les utilisateurs et les recettes
+$select_users_query = "SELECT * FROM users";
+$select_recipes_query = "SELECT * FROM recipes";
 
+// Preparations des requettes de selection des utilisateurs et des recettes
+$users_query_statement = $pdo_connexion->prepare($select_users_query);
+$recipes_query_statement = $pdo_connexion->prepare($select_recipes_query);
 
-$recipes = [
-    [
-        'title' => 'Cassoulet',
-        'recipe' => 'Etape 1 : des flageolets !',
-        'author' => 'mickael.andrieu@exemple.com',
-        'is_enabled' => true,
-    ],
-    [
-        'title' => 'Couscous',
-        'recipe' => 'Etape 1 : de la semoule',
-        'author' => 'mickael.andrieu@exemple.com',
-        'is_enabled' => false,
-    ],
-    [
-        'title' => 'Escalope milanaise',
-        'recipe' => 'Etape 1 : prenez une belle escalope',
-        'author' => 'mathieu.nebra@exemple.com',
-        'is_enabled' => true,
-    ],
-];
+// Execution des different requette
+$users_query_statement->execute();
+$recipes_query_statement->execute();
+
+// Recuparations des donnees des les variables $user (pour les utilateur) et $recipes (pour les recettes)
+$users = $users_query_statement->fetchAll();
+$recipes = $recipes_query_statement->fetchAll();
 
 
 ?>
