@@ -39,7 +39,7 @@ session_start();
                         id="description" 
                         name="description"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" class="btn btn-primary">Ajouter la recette</button>
             </form>
         </div>
     </main>

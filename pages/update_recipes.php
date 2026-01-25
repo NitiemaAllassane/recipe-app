@@ -66,7 +66,7 @@ $recipe = $recipeStatement->fetch(PDO::FETCH_ASSOC);
                         id="description" 
                         name="description"><?php echo $recipe['recipe'] ?></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" class="btn btn-primary">Modifier la recette</button>
             </form>
         </div>
     </main>
