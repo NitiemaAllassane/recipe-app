@@ -17,7 +17,7 @@ $deleteRequest = "DELETE FROM recipes WHERE recipe_id = :id";
 $prepareRequest = $pdo_connexion->prepare($deleteRequest);
 $prepareRequest->execute([
     'id' => $postData['id'],
-]);
+]) or die(print_r($pdo_connexion->errorInfo()));
 
 redirectToUrl('../index.php');
 
