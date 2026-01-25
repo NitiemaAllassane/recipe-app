@@ -19,34 +19,27 @@ session_start();
 
     <main>
         <div class="container">
-            <h1>Contactez nous</h1>
-            <form action="../php/contact_submit.php" method="post" enctype="multipart/form-data">
+            <h1>Ajouter une nouvelle recette</h1>
+            <form action="../php/post_recipe.php" method="post">
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="title" class="form-label">Titre de la recette</label>
                     <input 
-                        type="email" 
+                        type="text" 
                         class="form-control" 
-                        id="email" 
-                        name="email" 
-                        aria-describedby="email-help"
+                        id="title" 
+                        name="title" 
+                        aria-describedby="title-help"
                     >
-                    <p id="email-help" class="form-text">
-                        Nous ne revendrons pas votre email.
-                    </p>
                 </div>
                 <div class="mb-3">
-                    <label for="message" class="form-label">Votre message</label>
+                    <label for="description" class="form-label">Decrivez votre recette</label>
                     <textarea 
                         class="form-control"
                         placeholder="Exprimez vous" 
-                        id="message" 
-                        name="message"></textarea>
+                        id="description" 
+                        name="description"></textarea>
                 </div>
-                <div class="mb-3">
-                    <label for="screenshot" class="form-label">Ajouter une capture d'ecran</label>
-                    <input type="file" name="screenshot" id="screenshot">
-                </div>
-                <button type="submit" class="btn btn-primary">Envoyer</button>
+                <button type="submit" class="btn btn-primary">Ajouter</button>
             </form>
         </div>
     </main>

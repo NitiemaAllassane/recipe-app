@@ -26,9 +26,9 @@ main {
 }
 
 .recipes {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 
     .recipe {
         border: 1px solid gray;

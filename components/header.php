@@ -13,7 +13,7 @@ require_once(__DIR__ . '/../config/config.php');
                 <li><a href="<?= BASE_URL ?>pages/contact.php">Contact</a></li>
                 <?php if (isset($_SESSION['LOGGED_USER'])): ?>
                     <li>
-                        <a href="<?= BASE_URL ?>php/create_recipe.php">Ajouter une recette</a>
+                        <a href="<?= BASE_URL ?>pages/create_recipe.php">Ajouter une recette</a>
                     </li>
                     <li>
                         <a href="<?= BASE_URL ?>php/logout.php">Se deconnecter</a>
