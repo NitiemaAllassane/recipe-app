@@ -53,7 +53,33 @@ main {
 }
 
 .connectInfo {
-    background-color: cornflowerblue;
+    background-color: rgb(81, 129, 240);
     padding: 1em;
     margin-bottom: 2rem;
+}
+
+.detail-section {
+    margin-bottom: 3rem;
+}
+
+.comments-section {
+    border: 1px solid gray;
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+
+    p {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    i {
+        color: gray;
+    }
+}
+
+.empy-comment {
+    color: gray;
 }

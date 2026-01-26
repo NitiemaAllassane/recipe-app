@@ -15,7 +15,9 @@ if (isset($postData['email']) && isset($postData['password'])) {
                 $postData['password'] === $user['password']
             ) {
                 $_SESSION['LOGGED_USER'] = [
-                    'email' => $user['email']
+                    'email' => $user['email'],
+                    'full_name' => $user['full_name'],
+                    'id' => $user['user_id'],
                 ];
             }
         }
